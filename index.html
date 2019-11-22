@@ -1,149 +1,43 @@
 ---
----
-{% include header.html %}
-<!-- ---
 layout: base
 ---
- -->
-<area shape="" coords="" href="">
 
 
-    <section style="background: url(./img/hero.jpg); background-size: cover; background-position: center center" class="hero">
+    <section style="background: url({{site.baseurl}}/img/hero.jpg); background-size: cover; background-position: center center" class="hero">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
             <h1>人生短暂，不要让自己活得太累</h1>拿不来的东西，不要硬拿，即使暂时得到，也会失去。
           </div>
-        </div><a href="#intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> 下一页</a>
-      </div>
+
     </section>
 
-    <section class="featured-posts no-padding-top" id="intro">
+   <section class="featured-posts no-padding-top">
       <div class="container">
         <!-- Post-->
+        {% for post in site.posts %}
         <div class="row d-flex align-items-stretch">
           <div class="text col-lg-7">
             <div class="text-inner d-flex align-items-center">
               <div class="content">
                 <header class="post-header">
-                  <div class="category"><a href="#">人只这一辈子，</a><a href="#">我们不能白来这一遭。</a></div><a href="post.html">
-                    <h2 class="h4">所以让我们从快乐开始!做你想做的，爱你想爱的。</h2></a>
+                  <div class="category"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></div><a href="{{site.baseurl}}{{post.url}}">
+                    <h2 class="h4">{{post.title1}}</h2></a>
                 </header>
-                <p>不管你的生活有多么糟糕，都要记得微笑;不管你受了多少伤，都不要绝望;不管你的内心有多迷茫，都要记得你的梦想。有了梦想，灵魂就不会四处游荡;有了梦想，生活就有希望;有了梦想，每个平凡的日子都会变得闪亮。
-</p>
+                <p>{{post.excerpt|strip_html|truncate:100}}</p>
                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
                     <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
-                    <div class="title"><span>天天</span></div></a>
+                    <div class="title"><span>{{post.author|default:site.author}}</span></div></a>
                   <div class="date"><i class="icon-clock"></i> 2 月以前</div>
-                  <div class="comments"><i class="icon-comment"></i>12</div>
+                  <div class="comments"><i class="icon-comment"></i>{{post.date|date_to_long_string}}</div>
                 </footer>
               </div>
             </div>
           </div>
-          <div class="image col-lg-5"><img src="./img/featured-pic-1.jpeg" alt="..."></div>
+          <div class="image col-lg-5"><img src="{{site.baseurl}}/img/featured-pic-1.jpeg" alt="..."></div>
         </div>
-        <!-- Post        -->
-        <div class="row d-flex align-items-stretch">
-          <div class="image col-lg-5"><img src="img/featured-pic-2.jpeg" alt="..."></div>
-          <div class="text col-lg-7">
-            <div class="text-inner d-flex align-items-center">
-              <div class="content">
-                <header class="post-header">
-                  <div class="category"><a href="#">对于时光而言，我们只不过是一粒细小的微尘</a><a href="#">，我们只不过是一粒细小的微尘。</a></div><a href="post.html">
-                    <h2 class="h4">那些生命中很多的走过，也只不过是相逢与别离的叹息。</h2></a>
-                </header>
-                <p>做人要有信仰，做事要有信心。信仰是指路明灯，信心是前进动力。打跨自己的，不是别人而是你自己。不要把一次的失败看成是人生的终审，世上没有一帆风顺的事，只有坚强不倒的信心与毅力。逃是懦弱的，避是消极的，退就显得更加无能。成功的道路靠自己闯，心在哪里，路就在哪里!心有多大舞台就有多大。</p>
-                <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="img/avatar-2.jpg" alt="..." class="img-fluid"></div>
-                    <div class="title"><span>小小</span></div></a>
-                  <div class="date"><i class="icon-clock"></i> 1 月以前</div>
-                  <div class="comments"><i class="icon-comment"></i>15</div>
-                </footer>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
-    <!-- Divider Section-->
-    <section style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom" class="divider">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h2>花开了，然后凋零。星星是璀璨的，可那光芒也会消失。这个地球、太阳甚至是连这个宇宙也会有死亡的时候，人的一生和这些东西相比，简直就像刹那间的事情，我们的一切都只是刹那间的邂逅，最后都是要归入死的永眠。</h2><a href="#" class="hero-link">新的开始</a>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
     </section>
 
-    <!-- Latest Posts -->
-    <section class="latest-posts">
-      <div class="container">
-        <header>
-          <h2>来自博客的最新消息</h2>
-          <p class="text-big">速度之快，莫过于曹操。</p>
-        </header>
-        <div class="row">
-          <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-1.jpg" alt="..." class="img-fluid"></a></div>
-            <div class="post-details">
-              <div class="post-meta d-flex justify-content-between">
-                <div class="date">20 May | 2016</div>
-                <div class="category"><a href="#">Business</a></div>
-              </div><a href="post.html">
-                <h3 class="h4"> 很多人都相信：机会可遇而不可求。
-</h3></a>
-              <p class="text-muted">所以很多人就把他们宝贵的时间用在等候机会上，其实，如果你有过人的勇气，睿智的头脑，勤劳的双手，那么你也可以创造机会。
-</p>
-            </div>
-          </div>
-          <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-2.jpg" alt="..." class="img-fluid"></a></div>
-            <div class="post-details">
-              <div class="post-meta d-flex justify-content-between">
-                <div class="date">20 May | 2016</div>
-                <div class="category"><a href="#">Technology</a></div>
-              </div><a href="post.html">
-                <h3 class="h4">低头是一种能力，
-</h3></a>
-              <p class="text-muted">它不是自卑，也不是怯弱，它是清醒中的嬗变。有时，稍微低一下头，或者我们的人生路会更精彩。</p>
-            </div>
-          </div>
-          <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-3.jpg" alt="..." class="img-fluid"></a></div>
-            <div class="post-details">
-              <div class="post-meta d-flex justify-content-between">
-                <div class="date">20 May | 2016</div>
-                <div class="category"><a href="#">Financial</a></div>
-              </div><a href="post.html">
-                <h3 class="h4">处不住的，只能遗弃;盼不来的，只能放弃;留不住的，只能终止。</h3></a>
-              <p class="text-muted">人生，就是这样，选择不易，放弃艰难。人生之苦，苦在选择，人生之难，难在放弃。人生，说到底，就是选择与放弃。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Newsletter Section-->
-    <section class="newsletter no-padding-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>填入邮箱</h2>
-            <p class="text-big">邮箱,为亿万用户提供高效稳定便捷的电子邮件服务。你可以在电脑网页、iOS/iPad客户端、及Android客户端上使用它。</p>
-          </div>
-          <div class="col-md-8">
-            <div class="form-holder">
-              <form action="#">
-                <div class="form-group">
-                  <input type="email" name="email" id="email" placeholder="Type your email address">
-                  <button type="submit" class="submit">提交</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- {% include footer.html %}
+
+

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>我的博客</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/fontastic.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/fontastic.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="vendor/@fancyapps/fancybox/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/vendor/@fancyapps/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/custom.css">
 <!--     <link rel="shortcut icon" href="favicon.png"> -->
   </head>
   <body>
@@ -39,10 +39,9 @@
           </div>
           <div id="navbarcollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="index.html" class="nav-link active ">Home</a>
+              <li class="nav-item"><a href="{{site.baseurl}}{{post.url}}/index.html" class="nav-link active ">Home</a>
               </li>
-              <li class="nav-item"><a href="post.html" class="nav-link ">Post</a></li>
-            </ul>
+              </ul>
             <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
           </div>
         </div>
@@ -121,11 +120,11 @@
       </div>
     </footer>
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/vendor/jquery/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"> </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
-    <script src="js/front.js"></script>
+    <script src="{{site.baseurl}}/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="{{site.baseurl}}/vendor/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+    <script src="{{site.baseurl}}/js/front.js"></script>
   </body>
 </html>
