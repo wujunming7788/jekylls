@@ -1,2 +1,5 @@
 baseurl: /jekylls
 author: 年年
+
+paginate: 3
+plugins: [jekyll-paginate]
